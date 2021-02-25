@@ -1,0 +1,124 @@
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.middle {
+  border: none !important;
+}
+.cards-container {
+  display: grid;
+  transform: rotate(-2deg);
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(5, 100px);
+}
+.card {
+  border-style: solid;
+  border-width: thin;
+  position: relative;
+  text-align: center;
+}
+
+.card-description {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  left: 0;
+  color: #F7464E
+}
+
+.card-number {
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  color: #000;
+}
+.completed-card > p {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  left: 0;
+}
+.completed {
+  /* position: fixed; */
+  background:#7e99aa;
+  opacity: 40%;
+
+}
+.note {
+  position:relative;
+  overflow:hidden; /* hides part of the box-shadow */
+  padding:20px;
+  /* margin:2em 10%; */
+  color:#fff;
+  background: #FFDA3C;
+}
+
+.note:before {
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  border-width:0 16px 16px 0;
+  border-style:solid;
+  border-color:#FFDA3C #fff;
+  /* css3 extras */
+  -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), 
+                    -1px 1px 1px rgba(0,0,0,0.2);
+     -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), 
+                    -1px 1px 1px rgba(0,0,0,0.2);
+          box-shadow:0 1px 1px rgba(0,0,0,0.3), 
+                    -1px 1px 1px rgba(0,0,0,0.2);
+}
+.completed-text {
+  text-decoration:line-through;
+  color: #000;
+
+}
+.completed-card {
+  position: absolute;
+  top: 4%;
+  right: 2px;
+  border-radius: 50px;
+  border-style: solid;
+  height: 90px;
+  width: 90px;
+  border-width: thin;
+}
+
+@media (max-width:480px)  { 
+  .cards-container {
+    display: grid;
+    transform:none;
+    column-gap: 2%;
+
+    grid-template-columns: repeat(5, 55px);
+    grid-template-rows: repeat(5, 55px);
+  }
+  .completed-card {
+    position: absolute;
+    top: 4%;
+    right: 2px;
+    border-radius: 50px;
+    border-style: solid;
+    height: 45px;
+    width: 45px;
+    border-width: thin;
+    font-size: 7px;
+  }
+
+  .card-description, .card-number {
+    font-size: 7px;
+  }
+  .container {
+    left: 46%;
+    top: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+h1 {
+  font-size: 25px;
+}
+}
