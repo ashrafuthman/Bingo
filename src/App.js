@@ -185,15 +185,28 @@ class App extends React.Component {
   toggleSmilies = () => {
     this.setState({toggleSmilies: !this.state.toggleSmilies})
   }
+
+  shuffleCards = () => {
+    const shuffledCards = this.state.cards;
+    shuffledCards.forEach( card => card.completed = false);
+    for (let i = shuffledCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledCards[i], shuffledCards[j]] = [shuffledCards[j], shuffledCards[i]];
+    }
+    shuffledCards[12].completed = true;
+    this.setState({cards: shuffledCards});
+}
   render() {
     const cards = [];
     this.state.cards.forEach((value, index) => {
         cards.push(
           <BingoCard
+            key={index}
             card={value}
             index={index}
             bingo={this.state.bingo}
             checkBox={this.checkBox}
+            shuffle={this.shuffleCards}
             toggleSmilies={this.state.toggleSmilies}/>
         )
     })

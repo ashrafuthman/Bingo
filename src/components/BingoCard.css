@@ -23,7 +23,7 @@
 
 .card-description {
   position: absolute;
-  top: 25%;
+  top: 40%;
   right: 0;
   left: 0;
   color: #F7464E
@@ -35,9 +35,9 @@
   left: 1px;
   color: #000;
 }
-.completed-card > p {
+.completed-card > span {
   position: absolute;
-  top: 10px;
+  top: 25px;
   right: 0;
   left: 0;
 }
